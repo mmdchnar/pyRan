@@ -7,20 +7,25 @@ from telethon import errors
 from telethon.tl.types import ChannelParticipantsAdmins
 from telethon.sync import TelegramClient, events
 from telethon.tl.functions.channels import GetMessagesRequest
+from dotenv import loadenv
+import os
+
 
 # Turn logging on (info level)
 logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s', level=logging.INFO)
 
-API_ID = 0
-API_HASH = ''
-TOKEN = ''
+# Secrets
+loadenv()
+API_ID = os.get_env('API_ID')
+API_HASH = os.get_env('API_HASH')
+BOT_TOKEN = os.get_env('BOT_TOKEN')
+OWNER = int(os.get_env('OWNER'))
+ADMINS = [int(admin) for admin in os.get_env('ADMINS').split(' ')]
 
 # Define client
-bot = TelegramClient('client', API_ID, API_HASH).start(bot_token=TOKEN)
+bot = TelegramClient('client', API_ID, API_HASH).start(bot_token=BOT_TOKEN)
 
 
-OWNER = 0
-ADMINS = [0]
 
 
 # Define an asynco check if user is admin
