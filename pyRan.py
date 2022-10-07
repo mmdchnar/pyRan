@@ -7,7 +7,7 @@ from telethon import errors
 from telethon.tl.types import ChannelParticipantsAdmins
 from telethon.sync import TelegramClient, events
 from telethon.tl.functions.channels import GetMessagesRequest
-from dotenv import load_env
+from dotenv import load_dotenv
 import os
 
 
@@ -15,7 +15,7 @@ import os
 logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s', level=logging.INFO)
 
 # Secrets
-load_env()
+load_dotenv()
 API_ID = os.get_env('API_ID')
 API_HASH = os.get_env('API_HASH')
 BOT_TOKEN = os.get_env('BOT_TOKEN')
