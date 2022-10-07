@@ -20,7 +20,7 @@ API_ID = os.getenv('API_ID')
 API_HASH = os.getenv('API_HASH')
 BOT_TOKEN = os.getenv('BOT_TOKEN')
 OWNER = int(os.getenv('OWNER'))
-ADMINS = [int(admin) for admin in os.get_env('ADMINS').split(' ')]
+ADMINS = [int(admin) for admin in os.getenv('ADMINS').split(' ')]
 
 # Define client
 bot = TelegramClient('client', API_ID, API_HASH).start(bot_token=BOT_TOKEN)
