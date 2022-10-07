@@ -16,10 +16,10 @@ logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s'
 
 # Secrets
 load_dotenv()
-API_ID = os.get_env('API_ID')
-API_HASH = os.get_env('API_HASH')
-BOT_TOKEN = os.get_env('BOT_TOKEN')
-OWNER = int(os.get_env('OWNER'))
+API_ID = os.getenv('API_ID')
+API_HASH = os.getenv('API_HASH')
+BOT_TOKEN = os.getenv('BOT_TOKEN')
+OWNER = int(os.getenv('OWNER'))
 ADMINS = [int(admin) for admin in os.get_env('ADMINS').split(' ')]
 
 # Define client
